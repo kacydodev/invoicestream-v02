@@ -1,1 +1,42 @@
 @import 'tailwindcss';
+
+/* Layout */
+@layer base {
+	html {
+		@apply h-full;
+	}
+	body,
+	#root {
+		@apply h-full max-h-[1920px];
+	}
+	#root {
+		@apply grid grid-cols-[auto_1fr] grid-rows-[1fr_auto];
+	}
+	aside {
+		@apply row-span-2;
+	}
+}
+
+/* Spacing */
+@layer components {
+	aside {
+		@apply p-2;
+	}
+	main {
+		@apply my-12 flex flex-col items-center gap-10;
+	}
+	footer {
+		@apply w-full flex justify-center;
+	}
+	main header,
+	main section,
+	footer section {
+		@apply w-2xl;
+	}
+}
+
+@layer utilities {
+	* {
+		/* @apply border-1 border-red-500; */
+	}
+}

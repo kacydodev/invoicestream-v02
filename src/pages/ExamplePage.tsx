@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { supabase } from '../utils/supabase-client';
+import { supabase } from '../utils/supabaseClient';
 
 export default function ExamplePage() {
 	// const params = useParams();

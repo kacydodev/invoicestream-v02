@@ -1,10 +1,16 @@
-import { useParams } from 'react-router';
+import type { ErrorResponse } from 'react-router';
 
-export default function ErrorPage() {
-	const params = useParams();
+interface ErrorPage {
+	error?: ErrorResponse | object | null;
+	code?: string;
+}
+
+export default function ErrorPage({ error }: ErrorPage) {
+	// const params = useParams();
 	return (
 		<main>
-			<pre>{JSON.stringify(params, null, 2)}</pre>
+			error
+			<pre>{JSON.stringify(error, null, 2)}</pre>
 		</main>
 	);
 }

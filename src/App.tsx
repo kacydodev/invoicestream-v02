@@ -38,7 +38,6 @@ export default function App() {
 						<Route path=':code' element={<ErrorPage />} />
 					</Route>
 					{/* Delete in production */}
-					<Route path='example' element={<ExamplePage />} />
 					{/* Display 'page could not be found' */}
 					<Route path='*' element={<NotFoundPage />} />
 					{/* <Route path='' element={} /> */}

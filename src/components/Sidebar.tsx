@@ -18,7 +18,9 @@ export default function Sidebar() {
 				</li>
 			</ul>
 
-			<MoonIcon className='size-6 text-input' />
+			<Button onClick={toggleTheme}>
+				{buttonIcon} {theme}
+			</Button>
 		</aside>
 	);
 }

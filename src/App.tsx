@@ -8,7 +8,6 @@ import InvoicePage from './pages/InvoicePage';
 import InvoiceEditPage from './pages/InvoiceEditPage';
 import ErrorPage from './pages/ErrorPage';
 import NotFoundPage from './pages/NotFoundPage';
-import ExamplePage from './pages/ExamplePage';
 
 export default function App() {
 	return (
@@ -38,7 +37,6 @@ export default function App() {
 						<Route path=':code' element={<ErrorPage />} />
 					</Route>
 					{/* Delete in production */}
-					<Route path='example' element={<ExamplePage />} />
 					{/* Display 'page could not be found' */}
 					<Route path='*' element={<NotFoundPage />} />
 					{/* <Route path='' element={} /> */}

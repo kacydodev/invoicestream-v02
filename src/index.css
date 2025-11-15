@@ -33,10 +33,14 @@
 	footer section {
 		@apply w-2xl;
 	}
-}
 
-@layer utilities {
-	* {
-		/* @apply border-1 border-red-500; */
+	.btn {
+		@apply bg-slate-200 p-3;
 	}
 }
+
+/* @layer utilities {
+	* {
+		@apply border-1 border-teal-300;
+	}
+} */

@@ -8,7 +8,6 @@ import InvoicePage from './pages/InvoicePage';
 import InvoiceEditPage from './pages/InvoiceEditPage';
 import ErrorPage from './pages/ErrorPage';
 import NotFoundPage from './pages/NotFoundPage';
-import ExamplePage from './pages/ExamplePage';
 
 export default function App() {
 	return (

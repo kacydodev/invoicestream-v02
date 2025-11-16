@@ -1,15 +1,12 @@
 import { logoMark } from '../assets/logo';
-import { LogInIcon, MoonIcon } from 'lucide-react';
-
-// function User() {
-// 	return (
-// 		<li className='w-8 h-8 flex items-center justify-center rounded-full bg-input text-primary'>
-// 			<p className='mb-0.5 text-xl font-semibold'>KC</p>
-// 		</li>
-// 	);
-// }
+import { LogInIcon, MoonIcon, SunIcon } from 'lucide-react';
+import useTheme from '../hooks/useThene';
+import { Button } from './ui/Button';
 
 export default function Sidebar() {
+	const { theme, toggleTheme } = useTheme();
+	const buttonIcon = theme === 'dark' ? <MoonIcon /> : <SunIcon />;
+
 	return (
 		<aside className='flex flex-col gap-6 items-center justify-between rounded-r-lg text-sm bg-sidebar'>
 			<ul className='flex flex-col gap-6 items-center justify-center'>
@@ -20,7 +17,9 @@ export default function Sidebar() {
 				</li>
 			</ul>
 
-			<MoonIcon className='size-6 text-input' />
+			<Button onClick={toggleTheme}>
+				{buttonIcon} {theme}
+			</Button>
 		</aside>
 	);
 }

@@ -8,8 +8,17 @@ import InvoicePage from './pages/InvoicePage';
 import InvoiceEditPage from './pages/InvoiceEditPage';
 import ErrorPage from './pages/ErrorPage';
 import NotFoundPage from './pages/NotFoundPage';
+import { useEffect } from 'react';
+import useTheme from './hooks/useThene';
 
 export default function App() {
+	const { theme } = useTheme();
+
+	useEffect(() => {
+		document.documentElement.setAttribute('data-theme', theme);
+		localStorage.setItem('theme', theme);
+	}, [theme]);
+
 	return (
 		<>
 			<Routes>

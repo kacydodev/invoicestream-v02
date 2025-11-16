@@ -1,13 +1,16 @@
 import React, { useMemo, useState } from 'react';
 import ThemeContext from './ThemeContext';
-import type { ThemeType } from '../utils/types';
+import { themeType, type ThemeType } from '../utils/types';
 
-export default function ThemeProvider({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
-	const [theme, setCurrentTheme] = useState<ThemeType>('dark');
+const initialTheme = (): ThemeType => {
+	const storedTheme = localStorage.getItem('theme');
+	if (storedTheme && themeType.includes(storedTheme)) {
+		return storedTheme;
+	} else return 'dark';
+};
+
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+	const [theme, setCurrentTheme] = useState<ThemeType>(initialTheme);
 
 	const toggle = () => {
 		setCurrentTheme((prev) => (prev === 'light' ? 'dark' : 'light'));

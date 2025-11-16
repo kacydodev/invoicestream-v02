@@ -5,7 +5,6 @@ import { Button } from './ui/Button';
 
 export default function Sidebar() {
 	const { theme, toggleTheme } = useTheme();
-
 	const buttonIcon = theme === 'dark' ? <MoonIcon /> : <SunIcon />;
 
 	return (

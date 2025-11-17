@@ -1,5 +1,4 @@
 import { ChevronDown } from 'lucide-react';
-import { useState } from 'react';
 import {
 	Select,
 	Label,
@@ -9,21 +8,18 @@ import {
 	ListBox,
 	ListBoxItem,
 } from 'react-aria-components';
-import {
-	status,
-	type DashboardPropsInterface,
-	type StatusType,
-} from '../../utils/types';
+import { status, type DashboardPropsInterface } from '../../utils/types';
 
 export function StatusSelect({ setParams }: DashboardPropsInterface) {
-	const [currentStatus, setCurrentStatus] = useState('');
-	console.log('currentStatus:', currentStatus);
-
 	return (
 		<Select
-			// value={currentStatus}
-			// TODO: Fix this TS error
-			onChange={(selected) => setCurrentStatus(selected)}
+			onChange={(selected) => {
+				if (selected && typeof selected === 'string') {
+					const params = new URLSearchParams();
+					params.set('status', selected);
+					setParams(params);
+				}
+			}}
 		>
 			{/* Label is needed for accessibility. DO NOT REMOVE  */}
 			<Label aria-hidden hidden>

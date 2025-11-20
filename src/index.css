@@ -2,18 +2,28 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-	--color-background: var(--color-white);
-	--color-text: var(--color-slate-950);
 	--color-primary: var(--color-indigo-500);
-	--color-primary-text: var(--color-white);
 	--color-primary-light: var(--color-indigo-400);
 	--color-primary-dark: var(--color-indigo-600);
+	--color-primary-darker: oklch(0.2913 0.0513 276.54);
+
+	--color-primary-darkest: oklch(0.2574 0.0453 277.29);
+	--color-base-darkest: oklch(0.206 0.03 277.59);
+
+	--color-primary-text: var(--color-white);
+	--color-background: var(--color-white);
+	--color-text: var(--color-slate-950);
 }
 
 html[data-theme='dark'] {
-	--color-background: var(--color-slate-800);
+	--color-background: var(--color-base-darkest);
 	--color-text: var(--color-white);
 }
+
+/* main > * > *,
+table * {
+	@apply border border-teal-300;
+} */
 
 /* Layout */
 @layer base {
@@ -41,7 +51,7 @@ html[data-theme='dark'] {
 		@apply p-2;
 	}
 	main {
-		@apply my-12 flex flex-col items-center gap-10;
+		@apply my-12 flex flex-col items-center;
 	}
 	footer {
 		@apply w-full flex justify-center;

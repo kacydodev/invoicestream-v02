@@ -1,7 +1,7 @@
 import { useQuery, type UseQueryResult } from '@tanstack/react-query';
 
 export function useGetInvoices(params: URLSearchParams): UseQueryResult {
-	const path = '/api/invoice';
+	const path = '/api/v03/invoice';
 	const url = new URL(path, import.meta.env.VITE_API_URL);
 	url.search = params.toString();
 

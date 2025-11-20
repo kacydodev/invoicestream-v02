@@ -9,7 +9,7 @@ import InvoiceEditPage from './pages/InvoiceEditPage';
 import ErrorPage from './pages/ErrorPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { useEffect } from 'react';
-import useTheme from './hooks/useThene';
+import useTheme from './hooks/useTheme';
 
 // TODO: remove export default on all components
 

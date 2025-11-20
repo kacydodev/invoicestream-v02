@@ -11,6 +11,8 @@ import NotFoundPage from './pages/NotFoundPage';
 import { useEffect } from 'react';
 import useTheme from './hooks/useThene';
 
+// TODO: remove export default on all components
+
 export default function App() {
 	const { theme } = useTheme();
 

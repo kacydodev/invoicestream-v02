@@ -1,6 +1,6 @@
 import { logoMark } from '../assets/logo';
 import { LogInIcon, MoonIcon, SunIcon } from 'lucide-react';
-import useTheme from '../hooks/useThene';
+import useTheme from '../hooks/useTheme';
 import { Button } from './ui/Button';
 
 export default function Sidebar() {

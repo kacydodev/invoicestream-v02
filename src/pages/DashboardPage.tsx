@@ -5,7 +5,6 @@ import { useSearchParams } from 'react-router';
 
 export default function DashboardPage() {
 	const [params, setParams] = useSearchParams('');
-	console.log('params:', params);
 	const { data, error } = useGetInvoices(params);
 
 	if (error instanceof Error) return <ErrorPage error={error} />;

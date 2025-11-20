@@ -33,6 +33,7 @@ export function StatusSelect({ setParams }: DashboardPropsInterface) {
 			</Button>
 			<Popover>
 				<ListBox>
+					{/* TODO: fetch status list from '/api/v03/status' */}
 					{status.map((item) => (
 						<ListBoxItem key={item} id={item}>
 							{item}

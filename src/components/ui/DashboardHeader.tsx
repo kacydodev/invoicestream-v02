@@ -5,10 +5,10 @@ import { Search } from 'lucide-react';
 
 export function DashboardHeader({ setParams }: DashboardPropsInterface) {
 	return (
-		<header className='flex gap-12'>
-			<SearchField className='relative w-fit'>
+		<header className='flex gap-12 w-full'>
+			<SearchField aria-label='Search Field' className='relative w-fit'>
 				<Input placeholder='Search...' className='' />
-				<Button className='absolute right-0'>
+				<Button type='submit' className='absolute right-0'>
 					<Search />
 				</Button>
 			</SearchField>

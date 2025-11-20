@@ -1,6 +1,14 @@
 import { useQuery, type UseQueryResult } from '@tanstack/react-query';
+import type { invoiceRowType } from '../utils/types';
 
-export function useGetInvoices(params: URLSearchParams): UseQueryResult {
+interface QueryResult {
+	invoices: invoiceRowType[];
+	length: number;
+}
+
+export function useGetInvoices(
+	params: URLSearchParams
+): UseQueryResult<QueryResult> {
 	const path = '/api/v03/invoice';
 	const url = new URL(path, import.meta.env.VITE_API_URL);
 	url.search = params.toString();
@@ -9,8 +17,8 @@ export function useGetInvoices(params: URLSearchParams): UseQueryResult {
 		queryKey: ['invoices', url],
 		queryFn: async () => {
 			const response = await fetch(url.toString());
-			const invoices = await response.json();
-			return invoices;
+			const data = await response.json();
+			return data;
 		},
 	});
 }

@@ -12,6 +12,17 @@ export interface DashboardPropsInterface {
 	setParams: SetURLSearchParams;
 }
 
+export type invoiceRowType = {
+	secondaryId: string;
+	description: string;
+	paymentDue: string;
+	status: string;
+	total: number;
+	client: {
+		name: string;
+	};
+};
+
 const statusZod = z.enum(['draft', 'pending', 'paid']);
 
 export const InvoiceFull = z.object({

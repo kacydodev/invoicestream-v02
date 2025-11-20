@@ -12,9 +12,7 @@ import classNames from 'classnames';
 import { ChevronRight } from 'lucide-react';
 
 export function DashboardTable({ invoices }: { invoices: invoiceRowType[] }) {
-	const columnItems = Object.keys(invoices[0]).filter(
-		(item) => item !== 'description'
-	);
+	const tableHeaders = ['ID', 'Due Date', 'Name', 'Total', 'Status'];
 
 	const tableClassName = classNames({
 		'w-full': false,
@@ -29,7 +27,7 @@ export function DashboardTable({ invoices }: { invoices: invoiceRowType[] }) {
 			className={tableClassName}
 		>
 			<TableHeader className='text-left'>
-				{columnItems.map((item, idx) => {
+				{tableHeaders.map((item, idx) => {
 					return (
 						<Column key={item} isRowHeader={idx === 0} className=''>
 							{item}
@@ -51,9 +49,9 @@ export function DashboardTable({ invoices }: { invoices: invoiceRowType[] }) {
 						<Row key={secondaryId} className=''>
 							<Cell>{secondaryId}</Cell>
 							<Cell>{paymentDue}</Cell>
-							<Cell>{status}</Cell>
-							<Cell>{total}</Cell>
 							<Cell>{name}</Cell>
+							<Cell>{total}</Cell>
+							<Cell>{status}</Cell>
 							<Cell>
 								<Button>
 									<ChevronRight />

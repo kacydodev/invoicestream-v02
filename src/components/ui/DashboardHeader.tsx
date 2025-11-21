@@ -1,14 +1,22 @@
 import { Button, Input, SearchField } from 'react-aria-components';
-import type { DashboardPropsInterface } from '../../utils/types';
 import { StatusSelect } from './StatusSelect';
 import { Search } from 'lucide-react';
+import type { SetURLSearchParams } from 'react-router';
+import type { HTMLProps } from 'react';
 
-export function DashboardHeader({ setParams }: DashboardPropsInterface) {
+interface DashboardHeader extends HTMLProps<HTMLElement> {
+	setParams: SetURLSearchParams;
+}
+
+export function DashboardHeader({ setParams, ...props }: DashboardHeader) {
 	return (
-		<header className='flex gap-12 w-full'>
-			<SearchField aria-label='Search Field' className='relative w-fit'>
-				<Input placeholder='Search...' className='' />
-				<Button type='submit' className='absolute right-0'>
+		<header {...props}>
+			<SearchField
+				aria-label='Search Field'
+				className='relative w-fit h-fit bg-ui-background'
+			>
+				<Input placeholder='Search...' className='h-full px-3 py-1' />
+				<Button type='submit' className='absolute right-2 h-full my-auto'>
 					<Search />
 				</Button>
 			</SearchField>

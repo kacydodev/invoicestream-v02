@@ -1,8 +1,7 @@
 import ErrorPage from './ErrorPage';
 import { useGetInvoices } from '../hooks/useGetInvoices';
-import { DashboardHeader } from '../components/ui/DashboardHeader';
 import { useSearchParams } from 'react-router';
-import { DashboardTable } from '../components/ui/DashboardTable';
+import { InvoiceTable } from '../components/ui/table/InvoiceTable';
 
 export default function DashboardPage() {
 	const [params, setParams] = useSearchParams('');
@@ -13,10 +12,13 @@ export default function DashboardPage() {
 	return (
 		<>
 			<main>
-				<DashboardHeader setParams={setParams} />
-
-				{data && <DashboardTable invoices={data.invoices} />}
-
+				{data && (
+					<InvoiceTable
+						invoices={data.invoices}
+						count={data.length}
+						setParams={setParams}
+					/>
+				)}
 				{/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
 			</main>
 		</>

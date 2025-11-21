@@ -77,6 +77,9 @@
 
 	--color-primary-darkest: oklch(0.2574 0.0453 277.29);
 	--color-base-darkest: oklch(0.206 0.03 277.59);
+
+	/* --invoice-grid-row: 160px 160px 160px 2fr 2fr 1fr; */
+	--invoice-grid-row: 10rem 10rem 10rem 6rem 6rem 4rem;
 }
 
 html[data-theme='dark'] {
@@ -93,6 +96,10 @@ html[data-theme='dark'] {
 
 /* main > * > *,
 table * {
+	@apply border border-teal-300;
+} */
+
+/* #invoice-table * {
 	@apply border border-teal-300;
 } */
 
@@ -132,25 +139,4 @@ table * {
 	footer section {
 		@apply w-2xl;
 	}
-
-	/* Table */
-	table {
-    /* border-collapse:separate;
-    border:solid black 1px;
-    border-radius:6px; */
-		@apply border-separate border border-ui-border rounded;
-}
-
-td, th {
-    border-left:solid black 1px;
-    border-top:solid black 1px;
-}
-
-th {
-    border-top: none;
-}
-
-td:first-child, th:first-child {
-     border-left: none;
-}
 }

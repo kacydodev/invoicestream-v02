@@ -1,23 +1,94 @@
 @import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+	--dark-gray-1: #292929;
+	--dark-gray-2: #424242;
+	--dark-gray-3: #5c5c5c;
+	--light: #757575;
+	--light-gray-1: #fafafa;
+	--light-gray-2: #f2f2f2;
+	--light-gray-3: #e8e8e8;
+	--light-gray-4: #e0e0e0;
+	--light-gray-5: #d1d1d1;
+	--dark: #333333;
+
+	--cyan-bright: #18bfff;
+	--cyan: #01a9db;
+	--cyan-dark1: #0b76b7;
+	--cyan-light1: #77d1f3;
+	--cyan-light2: #d0f0fd;
+
+	/* TODO: Convert to TW variable */
+	--text----small: 1rem;
+	--text----default: 1.18rem;
+	--text----large: 1.36rem;
+	--text----xlarge: 1.55rem;
+	--text----small---paragraph: 1rem;
+	--text----default---paragraph: 1.18rem;
+	--text----large---paragraph: 1.36rem;
+	--text----xlarge---paragraph: 1.55rem;
+	--label----default: 1.18rem;
+	--heading----xsmall: 1.36rem;
+	--heading----small: 1.55rem;
+	--heading----default: 1.91rem;
+	--heading----large: 2.09rem;
+	--heading----xlarge: 2.45rem;
+	--heading----xxlarge: 3.18rem;
+	--heading----xsmall---caps: 1rem;
+	--heading----small---caps: 1.18rem;
+	--heading----default---caps: 1.36rem;
+}
+
 @theme {
-	--color-primary: var(--color-indigo-500);
+	--color-black: oklch(0.1684 0 0);
+	--color-background: var(--color-white);
+	--color-text: var(--dark);
+
+	--color-primary: var(--color-cyan-500);
+	--color-primary-hover: var(--color-cyan-300);
+	--color-primary-selected: var(--color-cyan-200);
+	--color-primary-selected-hover: var(--color-cyan-300);
+	--color-primary-text: var(--color-white);
+	--color-primary-text-hover: var(--color-black);
+	/* Use this to indicate highlighted components of primary items */
+	--color-primary-highlighted: var(--color-cyan-100);
+
+	--color-neutral: var(--light-gray-3);
+	--color-neutral-hover: var(--light-gray-4);
+	/* --color-neutral-selected */
+	/* --color-neutral-selected-hover */
+	/* --color-neutral-text: var(--color-white); */
+
+	--color-error: var(--color-rose-500)
+/* --color-error-hover */
+/* --color-error-selected */
+/* --color-error-selected-hover */
+
+	/* UI Components*/
+	--color-sidebar-background: var(--color-gray-800);
+	--color-ui-background: var(--color-gray-200);
+	--color-ui-border: var(--color-gray-400);
+
+	/* LEGACY */
 	--color-primary-light: var(--color-indigo-400);
 	--color-primary-dark: var(--color-indigo-600);
 	--color-primary-darker: oklch(0.2913 0.0513 276.54);
 
 	--color-primary-darkest: oklch(0.2574 0.0453 277.29);
 	--color-base-darkest: oklch(0.206 0.03 277.59);
-
-	--color-primary-text: var(--color-white);
-	--color-background: var(--color-white);
-	--color-text: var(--color-slate-950);
 }
 
 html[data-theme='dark'] {
 	--color-background: var(--color-base-darkest);
 	--color-text: var(--color-white);
+
+	--color-primary: var(--color-cyan-700);
+	--color-primary-hover: var(--color-cyan-600);
+	/* --color-primary-selected: var();
+	--color-primary-selected-hover: var(); */
+	--color-primary-text: var(--color-white);
+	--color-primary-text-hover: var(--color-black);
 }
 
 /* main > * > *,
@@ -62,7 +133,24 @@ table * {
 		@apply w-2xl;
 	}
 
-	.btn {
-		@apply bg-slate-200 p-3;
-	}
+	/* Table */
+	table {
+    /* border-collapse:separate;
+    border:solid black 1px;
+    border-radius:6px; */
+		@apply border-separate border border-ui-border rounded;
+}
+
+td, th {
+    border-left:solid black 1px;
+    border-top:solid black 1px;
+}
+
+th {
+    border-top: none;
+}
+
+td:first-child, th:first-child {
+     border-left: none;
+}
 }

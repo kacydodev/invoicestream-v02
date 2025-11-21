@@ -24,7 +24,7 @@ export function StatusSelect({ setParams }: DashboardPropsInterface) {
 		searchParams.get('status') || null
 	);
 	const filterButton = classNames({
-		'p-1 bg-primary-darker': true,
+		'p-1': true,
 		hidden: !label,
 	});
 

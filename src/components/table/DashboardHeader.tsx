@@ -1,14 +1,14 @@
 import { Button, Input, SearchField } from 'react-aria-components';
-import { StatusSelect } from './StatusSelect';
 import { Search } from 'lucide-react';
 import type { SetURLSearchParams } from 'react-router';
 import type { HTMLProps } from 'react';
+import { StatusSelect } from './StatusSelect';
 
-interface DashboardHeader extends HTMLProps<HTMLElement> {
+interface TableSearch extends HTMLProps<HTMLElement> {
 	setParams: SetURLSearchParams;
 }
 
-export function DashboardHeader({ setParams, ...props }: DashboardHeader) {
+export function TableSearch({ setParams, ...props }: TableSearch) {
 	return (
 		<header {...props}>
 			<SearchField

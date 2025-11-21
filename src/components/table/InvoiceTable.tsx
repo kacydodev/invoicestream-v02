@@ -1,8 +1,8 @@
 import type { SetURLSearchParams } from 'react-router';
-import type { InvoiceRowType } from '../../../utils/types';
 import { TableHeader } from './TableHeader';
 import { TableRows } from './TableRow';
-import { DashboardHeader } from '../DashboardHeader';
+import type { InvoiceRowType } from '../../utils/types';
+import { TableSearch } from './DashboardHeader';
 
 interface InvoiceTable {
 	invoices: InvoiceRowType[];
@@ -16,17 +16,9 @@ export function InvoiceTable({ invoices, count = 1, setParams }: InvoiceTable) {
 
 	return (
 		<div id='invoice-table' className={`grid ${rowClass} gap-4`}>
-			<DashboardHeader setParams={setParams} className='flex w-full' />
-
-			<TableHeader
-				headers={headers}
-				className='grid grid-rows-subgrid grid-cols-(--invoice-grid-row) [&_div]:px-3 [&_div]:py-2'
-			/>
-
-			<TableRows
-				invoices={invoices}
-				className='grid grid-rows-subgrid grid-cols-(--invoice-grid-row) rounded border border-ui-border text-left [&_div]:px-3 [&_div]:py-2'
-			/>
+			<TableSearch setParams={setParams} className='flex w-full' />
+			<TableHeader headers={headers} />
+			<TableRows invoices={invoices} />
 		</div>
 	);
 }

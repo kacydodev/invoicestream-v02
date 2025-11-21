@@ -1,7 +1,7 @@
 import ErrorPage from './ErrorPage';
 import { useGetInvoices } from '../hooks/useGetInvoices';
 import { useSearchParams } from 'react-router';
-import { InvoiceTable } from '../components/ui/table/InvoiceTable';
+import { InvoiceTable } from '../components/table/InvoiceTable';
 
 export default function DashboardPage() {
 	const [params, setParams] = useSearchParams('');

@@ -6,7 +6,7 @@ interface TableRows extends ButtonProps {
 	invoices: InvoiceRowType[];
 }
 
-export function TableRows({ invoices, ...props }: TableRows) {
+export function TableRows({ invoices }: TableRows) {
 	return (
 		<>
 			{invoices.map((invoice) => {
@@ -19,7 +19,11 @@ export function TableRows({ invoices, ...props }: TableRows) {
 					client: { name },
 				} = invoice;
 				return (
-					<Button key={id} onClick={() => console.log(id)} {...props}>
+					<Button
+						key={id}
+						onClick={() => console.log(id)}
+						className='grid grid-rows-subgrid grid-cols-(--invoice-grid-row) rounded border border-ui-border text-left cursor-pointer [&_div]:px-3 [&_div]:py-2'
+					>
 						<div>{secondaryId}</div>
 						<div>{paymentDue}</div>
 						<div>{name}</div>

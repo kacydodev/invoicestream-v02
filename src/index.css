@@ -54,29 +54,31 @@
 	/* Use this to indicate highlighted components of primary items */
 	--color-primary-highlighted: var(--color-cyan-100);
 
-	--color-neutral: var(--light-gray-3);
-	--color-neutral-hover: var(--light-gray-4);
+	--color-neutral: var(--color-neutral-200);
+	--color-neutral-hover: var(--color-neutral-300);
 	/* --color-neutral-selected */
 	/* --color-neutral-selected-hover */
-	/* --color-neutral-text: var(--color-white); */
+	--color-neutral-text: var(--color-neutral-600);
 
-	--color-error: var(--color-rose-500)
-/* --color-error-hover */
-/* --color-error-selected */
-/* --color-error-selected-hover */
+	--color-error: var(--color-rose-500);
+	/* --color-error-hover */
+	/* --color-error-selected */
+	/* --color-error-selected-hover */
 
 	/* UI Components*/
-	--color-sidebar-background: var(--color-gray-800);
-	--color-ui-background: var(--color-gray-200);
-	--color-ui-border: var(--color-gray-400);
+	--color-sidebar-background: var(--color-neutral);
+	--color-ui-background: var(--color-neutral);
+	--color-ui-label: var(--color-neutral-text);
+	--color-ui-border: var(--color-neutral);
+	--color-ui-border-error: var(--color-error);
 
 	/* LEGACY */
 	--color-primary-light: var(--color-indigo-400);
 	--color-primary-dark: var(--color-indigo-600);
 	--color-primary-darker: oklch(0.2913 0.0513 276.54);
-
 	--color-primary-darkest: oklch(0.2574 0.0453 277.29);
 	--color-base-darkest: oklch(0.206 0.03 277.59);
+	/* END OF LEGACY */
 
 	/* --invoice-grid-row: 160px 160px 160px 2fr 2fr 1fr; */
 	--invoice-grid-row: 10rem 10rem 10rem 6rem 6rem 4rem;

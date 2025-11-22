@@ -1,8 +1,8 @@
 import { useQuery, type UseQueryResult } from '@tanstack/react-query';
-import type { invoiceRowType } from '../utils/types';
+import type { InvoiceRowType } from '../utils/types';
 
 interface QueryResult {
-	invoices: invoiceRowType[];
+	invoices: InvoiceRowType[];
 	length: number;
 }
 

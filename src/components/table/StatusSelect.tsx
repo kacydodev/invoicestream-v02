@@ -9,22 +9,21 @@ import {
 	ListBoxItem,
 	type Key,
 } from 'react-aria-components';
-import { type DashboardPropsInterface } from '../../utils/types';
 import { useGetStatuses } from '../../hooks/useGetStatuses';
 import ErrorPage from '../../pages/ErrorPage';
 import { useState } from 'react';
 import classNames from 'classnames';
-import { useSearchParams } from 'react-router';
+import { useSearchParams, type SetURLSearchParams } from 'react-router';
 
 // TODO: refactor to smaller chunk?
-export function StatusSelect({ setParams }: DashboardPropsInterface) {
+export function StatusSelect({ setParams }: { setParams: SetURLSearchParams }) {
 	const { data: statuses, error } = useGetStatuses();
 	const [searchParams] = useSearchParams();
 	const [label, setLabel] = useState<string | null>(
 		searchParams.get('status') || null
 	);
 	const filterButton = classNames({
-		'p-1 bg-primary-darker': true,
+		'p-1': true,
 		hidden: !label,
 	});
 
@@ -37,7 +36,8 @@ export function StatusSelect({ setParams }: DashboardPropsInterface) {
 	}
 
 	return (
-		<div className='flex items-center gap-2'>
+		<div className='flex items-center gap-1'>
+			{/* TODO: Make Select reusable */}
 			<Select onChange={handleParamChange}>
 				{/* DO NOT REMOVE */}
 				{/* Label is needed for accessibility. */}
@@ -51,7 +51,7 @@ export function StatusSelect({ setParams }: DashboardPropsInterface) {
 					</span>
 				</Button>
 				<Popover>
-					<ListBox className='w-28 bg-primary-darker border-3 capitalize border-primary-darkest [&_*]:p-3'>
+					<ListBox className='w-28 bg-ui-background rounded border border-ui-border capitalize [&_*]:p-3'>
 						{statuses &&
 							statuses.map((status) => (
 								<ListBoxItem
